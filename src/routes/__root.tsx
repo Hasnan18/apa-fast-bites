@@ -84,8 +84,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { name: "theme-color", content: "#C41230" },
       { property: "og:title", content: "A.P.A Fast Food — Menu" },
-      { property: "og:description", content: "Taste the Fire · Experience the Flavor" },
+      { property: "og:description", content: "APA Fast Bites is a mobile-first web application displaying food menus accessible via QR code." },
       { property: "og:type", content: "website" },
+      { name: "twitter:title", content: "A.P.A Fast Food — Menu" },
+      { name: "description", content: "APA Fast Bites is a mobile-first web application displaying food menus accessible via QR code." },
+      { name: "twitter:description", content: "APA Fast Bites is a mobile-first web application displaying food menus accessible via QR code." },
+      { name: "twitter:card", content: "summary" },
     ],
     links: [
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
