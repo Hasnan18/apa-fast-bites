@@ -26,8 +26,14 @@ function MenuPage() {
   const [active, setActive] = useState(categories[0].id);
   const [query, setQuery] = useState("");
   const [showTop, setShowTop] = useState(false);
+  const [showCredit, setShowCredit] = useState(true);
   const sectionRefs = useRef<Record<string, HTMLElement | null>>({});
   const tabsRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const t = setTimeout(() => setShowCredit(false), 6000);
+    return () => clearTimeout(t);
+  }, []);
 
   // Scroll spy
   useEffect(() => {
