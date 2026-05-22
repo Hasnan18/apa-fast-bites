@@ -26,8 +26,14 @@ function MenuPage() {
   const [active, setActive] = useState(categories[0].id);
   const [query, setQuery] = useState("");
   const [showTop, setShowTop] = useState(false);
+  const [showCredit, setShowCredit] = useState(true);
   const sectionRefs = useRef<Record<string, HTMLElement | null>>({});
   const tabsRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const t = setTimeout(() => setShowCredit(false), 6000);
+    return () => clearTimeout(t);
+  }, []);
 
   // Scroll spy
   useEffect(() => {
@@ -233,13 +239,13 @@ function MenuPage() {
             "Good food is the foundation of genuine happiness."
           </div>
           <a
-            href="https://instagram.com/apa_fastfood"
+            href="https://instagram.com/a.p.a_fastfood"
             target="_blank"
             rel="noreferrer"
             className="mt-4 inline-flex items-center gap-2 rounded-full gradient-fire px-4 py-2 text-xs font-bold text-cream shadow-glow"
           >
             <Instagram className="h-3.5 w-3.5" />
-            @apa_fastfood
+            @a.p.a_fastfood
           </a>
           <div className="mt-6 border-t border-border pt-4 text-[11px] text-muted-foreground">
             Designed by{" "}
@@ -257,21 +263,29 @@ function MenuPage() {
         </div>
       </footer>
 
-      {/* Floating credit — always visible */}
-      <a
-        href="https://instagram.com/ihasxnaan"
-        target="_blank"
-        rel="noreferrer"
-        className="fixed bottom-3 left-1/2 z-40 -translate-x-1/2 inline-flex items-center gap-1.5 rounded-full border border-border/60 bg-background/55 px-3 py-1.5 text-[10px] font-medium text-muted-foreground shadow-soft backdrop-blur-md transition-colors hover:text-primary"
-        style={{ paddingBottom: "calc(0.375rem + env(safe-area-inset-bottom))" }}
-      >
-        <span>
-          Designed by <span className="font-bold text-foreground">Hasnan Sharief</span>
-        </span>
-        <span className="h-3 w-px bg-border" />
-        <Instagram className="h-3 w-3 text-primary" />
-        <span className="text-primary">ihasxnaan</span>
-      </a>
+      {/* Floating credit — visible for 6s */}
+      <AnimatePresence>
+        {showCredit && (
+          <motion.a
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 12 }}
+            transition={{ duration: 0.4 }}
+            href="https://instagram.com/ihasxnaan"
+            target="_blank"
+            rel="noreferrer"
+            className="fixed bottom-3 left-1/2 z-40 -translate-x-1/2 inline-flex items-center gap-1.5 rounded-full border border-border/60 bg-background/55 px-3 py-1.5 text-[10px] font-medium text-muted-foreground shadow-soft backdrop-blur-md transition-colors hover:text-primary"
+            style={{ paddingBottom: "calc(0.375rem + env(safe-area-inset-bottom))" }}
+          >
+            <span>
+              Designed by <span className="font-bold text-foreground">Hasnan Sharief</span>
+            </span>
+            <span className="h-3 w-px bg-border" />
+            <Instagram className="h-3 w-3 text-primary" />
+            <span className="text-primary">ihasxnaan</span>
+          </motion.a>
+        )}
+      </AnimatePresence>
 
       {/* Scroll to top */}
       <AnimatePresence>
