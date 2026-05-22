@@ -239,13 +239,13 @@ function MenuPage() {
             "Good food is the foundation of genuine happiness."
           </div>
           <a
-            href="https://instagram.com/apa_fastfood"
+            href="https://instagram.com/a.p.a_fastfood"
             target="_blank"
             rel="noreferrer"
             className="mt-4 inline-flex items-center gap-2 rounded-full gradient-fire px-4 py-2 text-xs font-bold text-cream shadow-glow"
           >
             <Instagram className="h-3.5 w-3.5" />
-            @apa_fastfood
+            @a.p.a_fastfood
           </a>
           <div className="mt-6 border-t border-border pt-4 text-[11px] text-muted-foreground">
             Designed by{" "}
