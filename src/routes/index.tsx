@@ -83,7 +83,7 @@ function MenuPage() {
   };
 
   return (
-    <main className="min-h-screen pb-32">
+    <main className="min-h-screen pb-40">
       {/* HERO */}
       <header className="relative overflow-hidden">
         <div className="absolute inset-0">
