@@ -83,7 +83,7 @@ function MenuPage() {
   };
 
   return (
-    <main className="min-h-screen pb-32">
+    <main className="min-h-screen pb-40">
       {/* HERO */}
       <header className="relative overflow-hidden">
         <div className="absolute inset-0">
@@ -257,6 +257,22 @@ function MenuPage() {
         </div>
       </footer>
 
+      {/* Floating credit — always visible */}
+      <a
+        href="https://instagram.com/ihasxnaan"
+        target="_blank"
+        rel="noreferrer"
+        className="fixed bottom-3 left-1/2 z-40 -translate-x-1/2 inline-flex items-center gap-1.5 rounded-full border border-border/60 bg-background/55 px-3 py-1.5 text-[10px] font-medium text-muted-foreground shadow-soft backdrop-blur-md transition-colors hover:text-primary"
+        style={{ paddingBottom: "calc(0.375rem + env(safe-area-inset-bottom))" }}
+      >
+        <span>
+          Designed by <span className="font-bold text-foreground">Hasnan Sharief</span>
+        </span>
+        <span className="h-3 w-px bg-border" />
+        <Instagram className="h-3 w-3 text-primary" />
+        <span className="text-primary">ihasxnaan</span>
+      </a>
+
       {/* Scroll to top */}
       <AnimatePresence>
         {showTop && (
@@ -265,9 +281,10 @@ function MenuPage() {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.6, y: 12 }}
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            className="fixed bottom-6 right-5 z-50 grid h-12 w-12 place-items-center rounded-full gradient-fire text-cream shadow-glow"
+            className="fixed bottom-14 right-4 z-50 grid h-11 w-11 place-items-center rounded-full gradient-fire text-cream shadow-glow"
             aria-label="Back to top"
           >
+
             <ChevronUp className="h-5 w-5" />
           </motion.button>
         )}
