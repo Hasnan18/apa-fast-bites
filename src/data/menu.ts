@@ -24,7 +24,7 @@ export const categories: Category[] = [
           { name: "Cheese Peri Peri Vada Pav", emoji: "🔥" },
           { name: "Ghat Masala Vada Pav", emoji: "🌶️" },
           { name: "Cheese Ghat Masala", emoji: "🧀" },
-          { name: "Mexican Vada Pav", emoji: "🇲🇽" },
+          { name: "🌮 Mexican Vada Pav", emoji: "🌶️" },
           { name: "Corn Vada Pav", emoji: "🌽" },
           { name: "Corn Cheese Vada Pav", emoji: "🌽" },
           { name: "Paneer Vada Pav", emoji: "🧈" },
